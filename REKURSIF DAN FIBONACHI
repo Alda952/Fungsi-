@@ -1,0 +1,41 @@
+def faktorial(n):
+    if n == 0 or n == 1:
+        print(f"faktorial({n}) = 1")
+        return 1
+    else:
+        result = n * faktorial(n - 1)
+        print(f"faktorial({n}) = {result}")
+        return result
+
+def fibonacci(n):
+    if n == 0:
+        print(f"fibonacci({n}) = 0")
+        return 0
+    elif n == 1:
+        print(f"fibonacci({n}) = 1")
+        return 1
+    else:
+        result = fibonacci(n - 1) + fibonacci(n - 2)
+        print(f"fibonacci({n}) = {result}")
+        return result
+
+def main():
+    while True:
+        print("Pilih fungsi yang ingin dijalankan:")
+        print("1. Faktorial")
+        print("2. Fibonacci")
+        pilihan = input("Masukkan pilihan (1 atau 2): ")
+
+        if pilihan == '1':
+            n = int(input("Masukkan angka untuk faktorial: "))
+            faktorial(n)
+            break
+        elif pilihan == '2':
+            n = int(input("Masukkan angka untuk fibonacci: "))
+            fibonacci(n)
+            break
+        else:
+            print("Peringatan: Hanya boleh memilih 1 atau 2.")
+
+if __name__ == "__main__":
+    main()
